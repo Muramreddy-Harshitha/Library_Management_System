@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Database Tables</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #243b55;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .item {
+            background: #eaf0f7;
+            padding: 15px;
+            margin: 12px 0;
+            border-radius: 6px;
+            font-size: 17px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #243b55;
+        }
+
+        a:hover {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Library Database</h1>
+
+        <h2>Database Tables</h2>
+
+        {% for table in tables %}
+        <div class="item">
+            {{ table.name }}
+            <span> - Table</span>
+        </div>
+        {% endfor %}
+
+        <h2>Database Views</h2>
+
+        {% for view in views %}
+        <div class="item">
+            {{ view.name }}
+            <span> - View</span>
+        </div>
+        {% endfor %}
+
+        <br>
+        <a href="/">Back to Home</a>
+    </div>
+
+</body>
+</html>

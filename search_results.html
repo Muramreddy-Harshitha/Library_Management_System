@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Global Search Results</title>
+</head>
+<body>
+
+<h1>Library Global Search</h1>
+
+<h2>Books</h2>
+{% for book in books %}
+<p>{{ book.book_id }} - {{ book.title }} - {{ book.author }}</p>
+{% else %}
+<p>No matching books.</p>
+{% endfor %}
+
+<hr>
+
+<h2>Members</h2>
+{% for member in members %}
+<p>{{ member.member_id }} - {{ member.name }} - {{ member.email }}</p>
+{% else %}
+<p>No matching members.</p>
+{% endfor %}
+
+<hr>
+
+<h2>Librarians</h2>
+{% for librarian in librarians %}
+<p>{{ librarian.librarian_id }} - {{ librarian.name }} - {{ librarian.phone }}</p>
+{% else %}
+<p>No matching librarians.</p>
+{% endfor %}
+
+<hr>
+
+<h2>Borrow Records</h2>
+{% for record in records %}
+<p>{{ record.borrow_id }} - Member: {{ record.member_id }} - Book: {{ record.book_id }} - {{ record.status }}</p>
+{% else %}
+<p>No matching borrow records.</p>
+{% endfor %}
+
+<hr>
+
+<h2>Reservations</h2>
+{% for reservation in reservations %}
+<p>{{ reservation.reservation_id }} - Member: {{ reservation.member_id }} - Book: {{ reservation.book_id }}</p>
+{% else %}
+<p>No matching reservations.</p>
+{% endfor %}
+
+<br>
+<a href="/">Back to Home</a>
+
+</body>
+</html>

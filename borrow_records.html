@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Borrow Records</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #263859;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #263859;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Borrow Records</h1>
+
+    <a href="/">Back to Home</a>
+
+    <table>
+        <tr>
+            <th>Borrow ID</th>
+            <th>Member ID</th>
+            <th>Book ID</th>
+            <th>Librarian ID</th>
+            <th>Borrow Date</th>
+            <th>Return Date</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+
+        {% for record in records %}
+        <tr>
+            <td>{{ record.borrow_id }}</td>
+            <td>{{ record.member_id }}</td>
+            <td>{{ record.book_id }}</td>
+            <td>{{ record.librarian_id }}</td>
+            <td>{{ record.borrow_date }}</td>
+            <td>{{ record.return_date }}</td>
+            <td>{{ record.status }}</td>
+            <td>
+    {% if record.status == 'Returned' %}
+        <form action="/delete-borrow-record/{{ record.borrow_id }}" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    {% else %}
+        Not Returned
+    {% endif %}
+</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Reservations</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #263859;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #263859;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Book Reservations</h1>
+
+    <a href="/">Back to Home</a>
+
+    <table>
+        <tr>
+            <th>Reservation ID</th>
+            <th>Member ID</th>
+            <th>Book ID</th>
+            <th>Reservation Date</th>
+        </tr>
+
+        {% for reservation in reservations %}
+        <tr>
+            <td>{{ reservation.reservation_id }}</td>
+            <td>{{ reservation.member_id }}</td>
+            <td>{{ reservation.book_id }}</td>
+            <td>{{ reservation.reservation_date }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>

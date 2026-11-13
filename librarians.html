@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Librarians</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #263859;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #263859;
+            color: white;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Library Staff Details</h1>
+
+    <a href="/">Back to Home</a>
+
+    <table>
+        <tr>
+            <th>Librarian ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Joining Date</th>
+        </tr>
+
+        {% for librarian in librarians %}
+        <tr>
+            <td>{{ librarian.librarian_id }}</td>
+            <td>{{ librarian.name }}</td>
+            <td>{{ librarian.phone }}</td>
+            <td>{{ librarian.joining_date }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>

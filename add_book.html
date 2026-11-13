@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add New Book</title>
+</head>
+<body>
+
+    <h1>Add New Book</h1>
+
+    <form method="POST">
+
+        <label>Book Title:</label>
+        <input type="text" name="title" required><br><br>
+
+        <label>Author:</label>
+        <input type="text" name="author"><br><br>
+
+        <label>Publisher:</label>
+        <input type="text" name="publisher"><br><br>
+
+        <label>Category:</label>
+        <input type="text" name="category"><br><br>
+
+        <label>Price:</label>
+        <input type="number" step="0.01" name="price"><br><br>
+
+        <label>Availability Status:</label>
+        <select name="availability_status">
+            <option value="Available">Available</option>
+            <option value="Borrowed">Borrowed</option>
+        </select><br><br>
+
+        <button type="submit">Add Book</button>
+
+    </form>
+
+    <br>
+    <a href="/books">Back to Books</a>
+
+</body>
+</html>

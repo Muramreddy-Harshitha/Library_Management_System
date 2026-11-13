@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
+            margin: 0;
+            padding: 25px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #243b55;
+            margin-bottom: 35px;
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px #aaa;
+        }
+
+        .card h2 {
+            color: #243b55;
+            font-size: 19px;
+        }
+
+        .card p {
+            font-size: 32px;
+            font-weight: bold;
+            color: #007bff;
+        }
+
+        .navigation {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            text-decoration: none;
+            background: #243b55;
+            color: white;
+            padding: 12px 20px;
+            margin: 6px;
+            border-radius: 6px;
+        }
+
+        .navigation a:hover {
+            background: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Library Management Dashboard</h1>
+
+    <div class="dashboard">
+
+        <div class="card">
+            <h2>Total Books</h2>
+            <p>{{ total_books }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Total Members</h2>
+            <p>{{ total_members }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Total Librarians</h2>
+            <p>{{ total_librarians }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Borrow Records</h2>
+            <p>{{ total_borrow_records }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Reservations</h2>
+            <p>{{ total_reservations }}</p>
+        </div>
+
+        <div class="card">
+            <h2>Currently Borrowed</h2>
+            <p>{{ borrowed_books }}</p>
+        </div>
+
+    </div>
+
+    <div class="navigation">
+        <a href="/">Home</a>
+        <a href="/tables">Database Tables</a>
+        <a href="/books">Books</a>
+        <a href="/members">Members</a>
+        <a href="/borrow-records">Borrow Records</a>
+        <a href="/reservations">Reservations</a>
+    </div>
+
+</body>
+</html>
